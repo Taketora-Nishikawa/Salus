@@ -31,7 +31,7 @@ class BoardsController < ApplicationController
   def update
     @board.update(board_params)
     
-    redirect_to board
+    redirect_to @board
   end
   
   def destroy
