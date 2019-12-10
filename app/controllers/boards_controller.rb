@@ -12,7 +12,7 @@ class BoardsController < ApplicationController
   def create
     board = Board.new(board_params)
     if board.save
-      flash[:notice] = "「#{board.title}」の掲示板を作成しました"
+      flash[:notice] = "「#{board.title}」の投稿を作成しました"
       redirect_to board
     else
       redirect_to new_board_path, flash: {
@@ -30,9 +30,14 @@ class BoardsController < ApplicationController
   end
   
   def update
-    @board.update(board_params)
-    
-    redirect_to @board
+    if @board.update(board_params)
+      redirect_to @board, flash: { notice: "「#{@board.title}」の投稿が更新されました"}
+    else
+      redirect_back fallback_location: @board, flash:{
+        board: @board,
+        error_messages: @board.errors.full_messages
+      }
+    end
   end
   
   def destroy
