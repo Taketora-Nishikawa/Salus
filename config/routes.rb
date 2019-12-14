@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :comments, only: %i[create destroy]
   resources :users, only: %i[new create]
   
+  get 'loginpage', to: 'users#loginpage'
   get 'mypage', to: 'users#me'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'

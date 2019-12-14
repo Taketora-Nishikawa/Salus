@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  def loginpage
+  end
+  
   def new
     @user =User.new(flash[:user])
   end

@@ -2,7 +2,7 @@
 
 <div class="p-comment_formBox">
   <p class="p-comment_formTitle">コメント記入</p>
-  <%= form_for comment do |f| %>
+  <%= form_with model: comment do |f| %>
     <%= f.hidden_field :board_id %>
     <div class="form-group">
       <%= f.label :name, '名前' %>

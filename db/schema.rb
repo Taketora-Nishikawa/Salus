@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_130459) do
+ActiveRecord::Schema.define(version: 2019_12_14_053550) do
 
   create_table "board_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "board_id"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2019_12_10_130459) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_boards_on_user_id"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -54,5 +56,6 @@ ActiveRecord::Schema.define(version: 2019_12_10_130459) do
 
   add_foreign_key "board_tag_relations", "boards"
   add_foreign_key "board_tag_relations", "tags"
+  add_foreign_key "boards", "users"
   add_foreign_key "comments", "boards"
 end
