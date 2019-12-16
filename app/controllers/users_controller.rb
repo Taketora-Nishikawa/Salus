@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   end
 
   def me
+   @user = User.find_by(id: session[:user_id])
   end
   
   def user_params

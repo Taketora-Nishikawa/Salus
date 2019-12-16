@@ -28,4 +28,8 @@ class User < ApplicationRecord
   
   validates :password,
   length: { minimum: 8 }
+  
+   def boards
+    return Board.where(user_id: self.id)
+   end
 end

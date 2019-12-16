@@ -7,4 +7,8 @@ module ApplicationHelper
       link_to name, path, class: 'nav-link'
     end
   end
+  
+  def logged_in?
+    !current_user.nil?
+  end
 end
