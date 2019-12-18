@@ -23,6 +23,7 @@ class Board < ApplicationRecord
   has_many :comments, dependent: :delete_all
   has_many :board_tag_relations, dependent: :delete_all
   has_many :tags, through: :board_tag_relations
+  has_many :favorites, dependent: :destroy
   belongs_to :user
   
   validates :name, presence: true, length: {maximum: 10}
@@ -32,5 +33,9 @@ class Board < ApplicationRecord
   
   def user
     return User.find_by(id: self.user_id)
+  end
+  
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
   end
 end

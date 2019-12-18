@@ -1,7 +1,7 @@
 <div class="d-flex align-items-center mt-4 md-4">
   <div class="ml-auto boards_linkBox">
     <%= link_to "一覧", boards_path, class: "btn btn-outline-dark" %>
-    <% if @current_user.id == @board.user_id %>
+    <% if @current_user == @board.user_id %>
       <%= link_to "編集", edit_board_path(@board), class: "btn btn-outline-dark" %>
     <% end %>
   </div>

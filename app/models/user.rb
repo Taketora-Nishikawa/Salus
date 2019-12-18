@@ -16,6 +16,7 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :boards, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   
   validates :name,
   presence: true,

@@ -6,7 +6,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <li class="nav-item" >
         <%= header_link_item('ホーム', root_path) %>
       </li>
       <li class="nav-item">
@@ -18,18 +18,14 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% if @current_user %>
-            <%= link_to 'マイページ', mypage_path, class: 'dropdown-item' %>
-            <%= link_to 'ログアウト', logout_path, method: :delete, class: 'dropdown-item' %>
+            <%= link_to mypage_path, class: 'dropdown-item' do %>マイページ<i class="far fa-user ml-1"></i><% end %>
+            <%= link_to logout_path, method: :delete, class: 'dropdown-item' do %>ログアウト<i class="fas fa-sign-out-alt ml-1"></i><% end %>
           <% else %>
-            <%= link_to '登録', new_user_path, class: 'dropdown-item' %>
-            <%= link_to 'ログイン', loginpage_path, class: 'dropdown-item' %>
+            <%= link_to new_user_path, class: 'dropdown-item' do %>登録<i class="far fa-address-card ml-1"></i><% end %>
+            <%= link_to loginpage_path, class: 'dropdown-item' do %>ログイン<i class="fas fa-sign-in-alt ml-1"></i><% end %>
           <% end %>
         </div>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>
