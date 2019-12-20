@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_001500) do
+ActiveRecord::Schema.define(version: 2019_12_19_075403) do
 
   create_table "board_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "board_id"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_001500) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "image"
     t.index ["user_id"], name: "index_boards_on_user_id"
   end
 

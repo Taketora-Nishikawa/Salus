@@ -4,6 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  body       :text(65535)
+#  image      :string(255)
 #  name       :string(255)
 #  title      :string(255)
 #  created_at :datetime         not null
@@ -30,6 +31,8 @@ class Board < ApplicationRecord
   validates :title, presence: true, length: {maximum: 30}
   validates :body, presence: true, length: {maximum: 1000}
   validates :user_id, presence: true
+  
+  mount_uploader :image, ImageUploader
   
   def user
     return User.find_by(id: self.user_id)

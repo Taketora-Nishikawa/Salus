@@ -50,7 +50,7 @@ class BoardsController < ApplicationController
   private
   
   def board_params
-    params.require(:board).permit(:name, :title, :body, :user_id, tag_ids: [])
+    params.require(:board).permit(:name, :title, :body, :user_id, :image, tag_ids: [])
   end
   
   def set_target_board
