@@ -1,4 +1,38 @@
-h1{
-  margin: 30px 0;
-  font-size: 50px;
+h1, h2 {
+  font-weight: 100;
+}
+
+.top-hero-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('home_img');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+.top-hero-container {
+  padding-top: 180px;
+  h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    margin-bottom: 60px;
+  }
+}
+
+.row .btn-black {
+  border: 1px solid black;
+  padding: 15px 0;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0.0);
+
+  &:hover {
+    color: #fff;
+    border: 1px solid #fff;
+  }
 }

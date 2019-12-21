@@ -1,0 +1,10 @@
+<div class="container"> 
+  <div class="d-flex align-items-center">
+    <h1>マイページ編集</h1>
+      <div class="ml-auto boards_linkBox">
+        <%= link_to "マイページ", mypage_path, class: "btn btn-outline-dark" %>
+      </div>
+  </div>
+  
+  <%= render partial: 'edit_form', locals: { user: @user } %>
+  </div>

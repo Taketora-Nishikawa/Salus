@@ -1,0 +1,12 @@
+
+[1mFrom:[0m /home/ec2-user/environment/Salus/app/controllers/users_controller.rb @ line 32 UsersController#update:
+
+    [1;34m30[0m: [32mdef[0m [1;34mupdate[0m
+    [1;34m31[0m:   binding.pry
+ => [1;34m32[0m:   [32mif[0m @user.update(user_params)
+    [1;34m33[0m:     redirect_to mypage_path, [35mflash[0m: { [35mnotice[0m: [31m[1;31m"[0m[31m「#{@user.name}[0m[31m」のマイページが更新されました[1;31m"[0m[31m[0m}
+    [1;34m34[0m:   [32melse[0m
+    [1;34m35[0m:     redirect_back [35mfallback_location[0m: edit_user_path(@user)
+    [1;34m36[0m:   [32mend[0m
+    [1;34m37[0m: [32mend[0m
+

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :favorites, only: %i[create destroy]
   end
   resources :comments, only: %i[create destroy]
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create edit update]
   
   get 'loginpage', to: 'users#loginpage'
   get 'mypage', to: 'users#me'

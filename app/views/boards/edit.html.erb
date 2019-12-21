@@ -1,8 +1,10 @@
-<div class="d-flex align-items-center">
-  <h1>投稿編集</h1>
-    <div class="ml-auto boards_linkBox">
-      <%= link_to "一覧", boards_path, class: "btn btn-outline-dark" %>
-    </div>
+<div class="container"
+  <div class="d-flex align-items-center">
+    <h1>投稿編集</h1>
+      <div class="ml-auto boards_linkBox">
+        <%= link_to "マイページ", boards_path, class: "btn btn-outline-dark" %>
+      </div>
+  </div>
+  
+  <%= render partial: "form", locals: {board: @board} %>
 </div>
-
-<%= render partial: "form", locals: {board: @board} %>
