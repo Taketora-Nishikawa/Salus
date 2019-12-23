@@ -25,6 +25,8 @@ class BoardsController < ApplicationController
   
   def show
     @comment = Comment.new(board_id: @board.id)
+    @user = @board.user
+    @favories_count = Favorite.where(board_id: @board.id).count
   end
   
   def edit

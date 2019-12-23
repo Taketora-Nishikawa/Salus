@@ -1,6 +1,6 @@
 <% if @current_user %>
   <% if Favorite.find_by(user_id: @current_user.id, board_id: board.id) %>
-    <%= link_to board_favorite_path(board_id: board.id), method: :delete, remote: true do %>
+    <%= link_to board_favorite_path(board_id: board.id, id: @current_user.id), method: :delete, remote: true do %>
       <i class="fas fa-heart fa-2x" style="color:red;"></i>
     <% end %>
   <% else %>
