@@ -38,7 +38,7 @@ class User < ApplicationRecord
   validates :password,
   length: { minimum: 8 }
   
-  mount_uploader :image, ImageUploader
+  mount_uploader :profile_image, ImageUploader
   
    def boards
     return Board.where(user_id: self.id)

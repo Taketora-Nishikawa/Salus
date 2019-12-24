@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_013603) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "age", limit: 1
+    t.integer "age"
     t.string "sex"
     t.string "profile_image"
     t.integer "height"

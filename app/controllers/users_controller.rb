@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:name, :password, :password_confirmation, :age, :profile_image, :sex, :birthday, :height, :body_weight, :self_introduction, :commit)
+    params.require(:user).permit(:name, :password, :password_confirmation, :age, :profile_image, :sex, :birthday, :height, :body_weight , :self_introduction, :commit)
   end
   
   def set_target_user

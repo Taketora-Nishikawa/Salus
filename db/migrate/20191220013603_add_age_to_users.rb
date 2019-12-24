@@ -1,6 +1,6 @@
 class AddAgeToUsers < ActiveRecord::Migration[5.2]
   def change
-    add_column :users, :age, :integer, :limit => 1
+    add_column :users, :age, :integer
     add_column :users, :sex, :string
     add_column :users, :profile_image, :string
     add_column :users, :height, :integer
