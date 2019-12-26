@@ -38,6 +38,9 @@ class User < ApplicationRecord
   validates :password,
   length: { minimum: 8 }
   
+  validates :self_introduction, length: {maximum: 100}
+  validates :commit, length: {maximum: 100}
+  
   mount_uploader :profile_image, ImageUploader
   
    def boards

@@ -6,29 +6,41 @@
       </div>
   </div>
   <div class="row mb-5 mt-3">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="section">
-        <div class="card">
+        <div class="card bg-light border-dark">
           <div class="card-header">
             <h4 class="text-center"><%= @user.name %></h4>
           </div>
-          <div class="content">
-            <p class="text-center text-bold text-large"><%= @user.sex %></p>
+          <div class="card-img-top text-center">
+            <% if @user.profile_image? %>
+              <%= image_tag @user.profile_image.url, :width => '100%' %>
+            <% else %>
+              <%= image_tag "no_img", :width => '100%' %>
+            <% end %>
           </div>
-          <div class="content">
-            <p class="text-center text-bold text-large"><%= @user.height %></p>
-          </div>
-          <div class="content">
-            <p class="text-center text-bold text-large"><%= @user.body_weight %></p>
-          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item text-center">性別:<%= @user.sex %></li>
+            <li class="list-group-item text-center">年齢:<%= @user.age %></li>
+            <li class="list-group-item text-center">身長:<%= @user.height %></li>
+            <li class="list-group-item text-center">体重:<%= @user.body_weight %></li>
+          </ul>
         </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="section">
-        <div class="card">
+        <div class="card bg-light border-dark">
+          <div class="card-header">
+            <h4 class="text-center">自己紹介</h4>
+          </div>
           <div class="content">
             <p class="card-text"><%= simple_format(@user.self_introduction) %></p>
+          </div>
+        </div>
+        <div class="card bg-light border-dark mt-5">
+          <div class="card-header">
+            <h4 class="text-center">目標</h4>
           </div>
           <div class="content">
             <p class="card-text"><%= simple_format(@user.commit) %></p>

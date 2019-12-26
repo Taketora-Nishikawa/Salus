@@ -45,7 +45,6 @@ class BoardsController < ApplicationController
   
   def destroy
     @board.destroy
-    
     redirect_to boards_path, flash: { notice: "「#{@board.title}」の投稿が削除されました"}
   end
   

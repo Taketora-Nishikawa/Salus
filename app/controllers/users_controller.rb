@@ -31,7 +31,10 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to mypage_path, flash: { notice: "「#{@user.name}」のマイページが更新されました"}
     else
-      redirect_back fallback_location: edit_user_path(@user)
+      redirect_back fallback_location: edit_user_path(@user), flash:{
+        user: @user,
+        error_messages: @user.errors.full_messages
+      }
     end
   end
   

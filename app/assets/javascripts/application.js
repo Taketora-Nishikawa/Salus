@@ -12,8 +12,9 @@
 //
 //= reequir jquery3
 //= reequir jquery_ujs
-//= reequir popper
-//= reequir bootstrap-sprockets
+//= require_tree .
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= reequir popper
+//= reequir bootstrap-sprockets
