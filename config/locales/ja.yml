@@ -5,6 +5,11 @@ ja:
         name: 名前
         password: パスワード
         password_confirmation: パスワード（確認）
+        age: 年齢
+        height: 身長
+        body_weight: 体重
+        self_introduction: 自己紹介
+        commit: 目標
       board:
         name: 名前
         title: タイトル

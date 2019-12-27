@@ -38,6 +38,9 @@ class User < ApplicationRecord
   validates :password,
   length: { minimum: 8 }
   
+  validates :age, length: {maximum: 3}
+  validates :height, length: {maximum: 3}
+  validates :body_weight, length: {maximum: 3}
   validates :self_introduction, length: {maximum: 100}
   validates :commit, length: {maximum: 100}
   

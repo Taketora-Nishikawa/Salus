@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-   before_action :set_target_user, only: %i[me edit update]
+   before_action :set_target_user, only: %i[me update]
   
   def loginpage
   end
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
   
   def edit
+    @user = User.find(session[:user_id],flash[:@user] )
   end
   
   def update

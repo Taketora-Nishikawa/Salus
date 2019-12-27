@@ -5,6 +5,11 @@
         <%= link_to 'マイページ編集', edit_user_path(@user), class: "btn btn-outline-dark" %>
       </div>
   </div>
+  
+  <% if flash[:notice] %>
+    <div class="alert alert-primary"><%= flash[:notice] %></div>
+  <% end %>
+  
   <div class="row mb-5 mt-3">
     <div class="col-md-4">
       <div class="section">
@@ -24,6 +29,7 @@
             <li class="list-group-item text-center">年齢:<%= @user.age %></li>
             <li class="list-group-item text-center">身長:<%= @user.height %></li>
             <li class="list-group-item text-center">体重:<%= @user.body_weight %></li>
+            <li class="list-group-item text-center">生年月日:<%= @user.birthday.strftime('%Y年 %m月 %d日') %></li>
           </ul>
         </div>
       </div>
